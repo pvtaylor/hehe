@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Break Reminder</title>
+    <title>Pokémon Study Break</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="widget-container">
-        <div class="widget-header">
-            <h2>Time for a Break!</h2>
-        </div>
-        <div class="widget-body">
-            <p>You've been studying for a while. Take a quick break and recharge!</p>
-            <button id="dismiss-button">Got it!</button>
-        </div>
-        <div class="next-break">
-            <p>Next Break in <span id="timer">2:00:00</span></p>
-        </div>
+    <div class="gameboy-screen">
+        <h1>⚡ Pikachu says... ⚡</h1>
+        <p class="message">"Trainer, you’ve been studying too long! Time for a break!"</p>
+        <img src="assets/pikachu.gif" alt="Pikachu" class="pikachu">
+        <button id="break-button">
+            <img src="assets/pokeball.png" alt="Poké Ball"> Take a Break!
+        </button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
