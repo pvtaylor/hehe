@@ -1,38 +1,60 @@
-// Set the timer for 2 hours (in seconds)
-let breakTime = 2 * 60 * 60; // 2 hours in seconds
-let timerDisplay = document.getElementById("timer");
-let dismissButton = document.getElementById("dismiss-button");
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid'); /* Pokémon font */
 
-function startTimer() {
-    let countdown = setInterval(function () {
-        let hours = Math.floor(breakTime / 3600);
-        let minutes = Math.floor((breakTime % 3600) / 60);
-        let seconds = breakTime % 60;
-
-        // Format time as HH:MM:SS
-        timerDisplay.textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
-
-        breakTime--;
-
-        // When timer reaches 0, show reminder and reset timer
-        if (breakTime < 0) {
-            clearInterval(countdown);
-            alert("It's time to take a study break!");
-            breakTime = 2 * 60 * 60; // Reset timer to 2 hours
-            startTimer(); // Restart timer
-        }
-    }, 1000);
+body {
+    background-color: #A4C639;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pokemon Solid', sans-serif;
 }
 
-function padZero(time) {
-    return time < 10 ? "0" + time : time;
+.gameboy-screen {
+    width: 320px;
+    height: 400px;
+    background-color: #F5DB4C;
+    border: 8px solid #3A5BA0;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-dismissButton.addEventListener("click", function () {
-    alert("Good job! Take a break!");
-    breakTime = 2 * 60 * 60; // Reset timer when user dismisses the reminder
-    startTimer(); // Restart timer after dismissing
-});
+h1 {
+    color: #3A5BA0;
+    font-size: 22px;
+    text-shadow: 2px 2px 2px #FFCC00;
+}
 
-// Start the timer when the page loads
-startTimer();
+.message {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.pikachu {
+    width: 100px;
+    margin: 10px 0;
+}
+
+#break-button {
+    background-color: #FF3C00;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#break-button img {
+    width: 20px;
+}
+
+#break-button:hover {
+    background-color: #E60000;
+}
